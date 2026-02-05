@@ -39,7 +39,14 @@ This project is built with a focus on **clean architecture, user experience, and
 -> OpenWeatherMap REST API
 -> SQLite (default Django DB)
 
+---
 
+ 📁 Project Structure
 
-## 📁 Project Structure
-
+weather_app/
+├── myapp/        # Application logic
+├── templates/    # HTML templates
+├── static/       # CSS files
+├── weather_app/  # Project settings
+└── manage.py
+└── README.md
