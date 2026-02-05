@@ -1,0 +1,79 @@
+body {
+  background: linear-gradient(to right, #74ebd5, #9face6);
+  font-family: Arial, sans-serif;
+  background: lightblue;
+}
+
+.container {
+  width: 500px;
+  margin: 100px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  background: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #45a049;
+}
+
+/* 🔥 Weather box main */
+.weather-box {
+  position: relative;          /* IMPORTANT */
+  margin-top: 5px;
+  background: #f4f4f4;
+  padding: 10px 8px;           /* compact height */
+  border-radius: 8px;
+  line-height: 1.2;
+}
+
+/* 🌊 Left icon */
+.weather-box .left-icon {
+  position: absolute;
+  top: 6px;
+  left: 8px;
+  font-size: 20px;
+}
+
+/* ❌ Right delete icon */
+.weather-box .close-btn {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  font-size: 16px;
+  color: blue;
+  cursor: pointer;
+}
+
+/* Text spacing fix */
+.weather-box h2 {
+  margin: 18px 0 6px;   /* icon overlap avoid */
+}
+
+.weather-box p {
+  margin: 4px 0;
+}
+
+/* Shadow */
+.shadow {
+  box-shadow: 2px 2px 3px 1px lightslategray;
+  padding: 8px;        /* reduce height */
+}

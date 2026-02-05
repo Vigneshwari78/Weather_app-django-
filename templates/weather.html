@@ -1,0 +1,72 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="{% static 'weather.css' %}">
+</head>
+
+<body>
+  <div class="container">
+    <h1>🌦️ Weather App</h1>
+
+    <!-- Messages -->
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+          {{ message }}
+        </div>
+      {% endfor %}
+    {% endif %}
+
+    <!-- Form -->
+    <form method="POST">
+      {% csrf_token %}
+      {{ form.name }}
+      <button type="submit">Search</button>
+    </form>
+
+    <!-- Weather Cards -->
+    {% for city_weather in data %}
+      <div class="weather-box shadow">
+
+        <!-- LEFT ICON -->
+        <img
+          src="http://openweathermap.org/img/w/{{ city_weather.icon }}.png"
+          alt="icon"
+          class="left-icon"
+        />
+
+        <!-- RIGHT DELETE -->
+        <a
+          href="{% url 'DCity' city_weather.city %}"
+          class="close-btn"
+          title="Delete"
+        >
+          &#x2718;
+        </a>
+
+        <!-- CONTENT -->
+        <h2>{{ city_weather.city }}</h2>
+        <p>🌡️ Temperature: {{ city_weather.temperature }}&deg;C</p>
+        <p>☁️ Condition: {{ city_weather.description }}</p>
+        <p>💧 Country: {{ city_weather.country }}</p>
+
+      </div>
+    {% empty %}
+      <p>No data available</p>
+    {% endfor %}
+  </div>
+
+  <!-- JS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      setTimeout(function () {
+        $(".alert").fadeOut(300);
+      }, 2000);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+# Virtual environment
+weather/
+venv/
+env/
+
+# Python
+__pycache__/
+*.pyc
+
+# Django
+db.sqlite3
+media/
+
+# OS
+.DS_Store
