@@ -6,7 +6,7 @@ from django.contrib import messages
 
 # Create your views here.def home(request):
 def home(request):
-    url = 'https://api.openweathermap.org/data/2.5/weather?q={}&appid=b2a12beda58827d40b6442b2f8c81f87'
+    url = 'https://api.openweathermap.org/data/2.5/weather?q={}&appid='xxxxxxxxxxxxxxxxxxxxxxxx'
 
     data = []   # 🔥 important – outside if/else
 
